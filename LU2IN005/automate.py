@@ -146,6 +146,51 @@ class Automate(AutomateBase):
         """ Automate  -> Automate
         rend l'automate déterminisé d'auto
         """
+            # check if automata is already deterministic or not
+        if Automate.estDeterministe(auto) is True:
+            return auto
+        else:
+            # initial state into state_index
+            state_index = []
+            state_index.append(auto.getListInitialStates())
+            
+            # initial State / Transition declaration
+            state_cnt = 0
+            state_list = []
+            trans_list = []
+            alphabet_list = auto.getAlphabetFromTransitions()
+            state_list.append(State(state_cnt,True,False,state_index[state_cnt]))
+
+            # loop from each added state from state_index
+            for state_in in state_index:
+                for alphabet in alphabet_list:
+                    state_out = auto.succ(state_in,alphabet)
+                    if len(state_out) != 0:
+                        if state_out in state_index:
+                            idx = state_index.index(state_out)
+                            trans_list.append(Transition(state_list[state_cnt], alphabet, state_list[idx]))
+                        else:
+                            print(state_list)
+                            state_index.append(state_out)
+                            state_cnt += 1
+                            state_list.append(State(state_cnt,False,State.isFinalIn(state_out),state_index[state_cnt]))
+                            trans_list.append(Transition(state_list[state_cnt-1],alphabet,state_list[state_cnt]))
+            
+            return Automate(trans_list)
+
+
+
+
+
+                
+
+
+            cnt += 1
+
+# initial states -> set
+# 
+
+            
         return
         
     @staticmethod
