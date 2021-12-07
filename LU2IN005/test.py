@@ -9,9 +9,16 @@ from transition import Transition
 from myparser import *
 
 automate = Automate.creationAutomate("exempleAutomate.txt")
-automate.show("exempleAutomate")
+s0 = State(0, True, False)
+s1 = State(1, False, False)
+s2 = State(2, False, False)
+s3 = State(3, False, True)
+s4 = State(4, True, False)
 
-s1= State(1, False, False)
-s2= State(2, False, False)
-print (s1==s2)
-print (s1!=s2)
+t_list = automate.getListTransitionsFrom(s0)
+for transition in t_list:
+    print(transition.etiquette)
+
+# # test function : accepte
+# print(Automate.accepte(automate, 'baaa'))
+

@@ -1,0 +1,94 @@
+Reseaux  🤌🏻
+
+1. check if it has a possibility of being an offset (does it have more than 2 digits)
+2. examine each offsets and see if they readable hexadecimal number
+    1) if they are readeable (if they contain right hexadecimal number),
+        1) calculate the number of octets till the next readable offset
+    2) if they are not readable and contains unreadable characters else than 0-f, drop the whole line 
+    * by readable, we mean its constructed with 
+
+
+
+Parsing
+
+How to parse:
+1. Anything else more then two octets 123(x) we don’t take, 
+2.  ignore, 12(0), 0-F(O) else ignore
+
+Examples:
+0000 A0 A0 A0 A0 A0 A0 A0 A0 A0 A0 A0 A0 A0 A0 A0 A0 A0 A0 A0 A0 A0 A0 A0 A0 A0 A0 A0 A0 A0 A0 000020 A0 A0 A0 A0 A0 A0 A0 A0 A0 alsd;fjalsdjfk;alsjd 0031 A0 A0 A0 A0 A0 A0 A0 A0 A0 
+
+Working example:
+0000 A1 A2 A3 A4 A5 A6 A7 A8 0008 A9 AA AB AC AD AE AF B0 0010 B1 B2 B3 B4 B5 B6 B7 B8 B9 BA BB BC BD BE BF C0 0020 C1 C2 C3 C4 C5 C6 C7 C8
+
+The result:
+[A0 A0 A0 A0 A0 A0 A0 A0 A0 A0 A0 A0 A0 A0 A0 A0 A0 A0 A0 A0 A0 A0 A0 A0 A0 A0 A0 A0 A0 A0 A0 A0 A0 A0 A0 A0 A0 A0 A0 A0 A0 A0 
+A0 A0 A0 A0 A0 A0 A0 A0 A0 A0 A0 A0 A0 A0 A0 A0 A0 A0 A0 A0 A0 A0 A0 A0]
+
+Every layer includes:
+Example (Ethernet)
+- Triming for ethernet, we are going to trim unnecessary(dest, source, type)
+- Network layer (the rest)
+
+——————————————————
+
+1. Datalink Layer - Ethernet.
+Type: dictionary
+{“0800”: “DOD Internet, …} -> ARP, DoD just show types
+
+Mac address: show it directly
+Check Datalength if its within 46 ~ 1500 bytes -> internal data we are going check later
+
+—————————————————
+
+2. Network Layer
+Version - simply show
+IHL - we need change it into decimal, tell us the length until the options 
+TOS - barely used so no dictionarys needed - show data
+Total Length - calculate and see if the length matches or not (not necessary)
+Identification - Just show
+Flags - 0 , DF, MF show
+Fragment offset  - show in decimal
+TTL - show decimal
+Protocol - dictionary  - only UDP, we take it into account for other upper layers, the others we just show ( ICMP )
+Checksum - show it check if its right or not - python checksum library / code
+Source address (decimal, ip format)
+Dest address (decimal, ip format)
+Options - we can check options with IHL by substituting 20 bytes of IHL * 4
+	Types - show, maybe later we can do RR and else
+	Length - shows whole option length if it matches with the IHL
+	Value - we just need to show
+	Padding - the rest of 32 bytes
+
+————————————————————
+
+	
+3. Transport layer
+
+UDP
+	Number of source port / Number of port destination  / Longeur / Checksum / data
+
+
+—————————————————————
+
+
+4. APPlication layer
+
+DNS
+	header(6)	identification / flags / number of questions / number of answer RRs / number of authority RRs / number of authority RRs / number of additional RRs
+
+	questions / answers / authority / additional info -> need to check how to work and show their values
+
+	
+DHCP
+	8 messages and options for each type of message
+	discover / offer / request / pack / nak / decline / release / inform 
+	https:://www.tcpipguide.com/free/t_DHCPMessageFormat.htm
+
+
+
+
+
+
+
+

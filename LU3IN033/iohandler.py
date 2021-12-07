@@ -1,10 +1,9 @@
 def fileinput(path = "testinput.txt"):
-    file = open(path, 'r').read()
-    return file.lower()
+    line_list = [line.upper().replace("\n", "") for line in open(path, 'r').readlines()]
+    filtered_list = list(filter(lambda a: a!="", line_list))
+    return filtered_list
 
 
 def fileoutput(output, path = "testoutput.txt"):
-    file = open(path, 'w')
-    file.write(output)
-    file.close()
-    
+    with open(path,'w') as file:
+        file.write(output)

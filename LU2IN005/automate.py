@@ -27,11 +27,14 @@ class Automate(AutomateBase):
         """list[State] x str -> list[State]
         rend la liste des états accessibles à partir de la liste d'états
         listStates par l'étiquette lettre
-        """
-        return
+        """        
+        successeurs = []
+        for state in listStates:
+            for t in self.getListTransitionsFrom(state):
+                if t.etiquette == lettre and t.stateDest not in successeurs:
+                    successeurs.append(t.stateDest)
 
-
-
+        return successeurs
 
     """ Définition d'une fonction déterminant si un mot est accepté par un automate.
     Exemple :
@@ -41,20 +44,51 @@ class Automate(AutomateBase):
             else:
                 print "L'automate n'accepte pas le mot abc"
     """
+
     @staticmethod
     def accepte(auto,mot) :
         """ Automate x str -> bool
         rend True si auto accepte mot, False sinon
         """
-        return
+        # get the initial states
+        state_list = auto.getListInitialStates()
+
+        # initiate succession out of initial states
+        for lettre in mot:
+            state_list = auto.succ(state_list, lettre)
+
+        # check if final any final state is in the state_list
+        state_list_final = auto.getListFinalStates()        
+
+        # check if any final state is in state list and return True if exists
+        for state in state_list_final:
+            if state in state_list:
+                return True
+
+        # else return False
+        return False
+        
 
 
     @staticmethod
-    def estComplet(auto,alphabet) :
+    def estComplet(auto, alphabet) :
         """ Automate x str -> bool
          rend True si auto est complet pour alphabet, False sinon
         """
-        return 
+        # for every state, check if all alphabet transitions exist
+        listStates = auto.listStates
+        for state in listStates:
+
+            # etiquette list of a state
+            list_etiquette = [t.etiquette for t in auto.getListTransitionsFrom(state)]
+
+            # check in set if list_etiquette has all the elements of alphabet
+            if set(alphabet) != set(list_etiquette):
+                return False
+                
+        # if all states passes the test, return True
+        return True
+
 
 
         
@@ -63,7 +97,20 @@ class Automate(AutomateBase):
         """ Automate  -> bool
         rend True si auto est déterministe, False sinon
         """
-        return
+        # for every state, check if there is an overlap of alphabets
+        
+        listStates = auto.listStates
+        for state in listStates:
+
+            # etiquette list of a state
+            list_etiquette = [t.etiquette for t in auto.getListTransitionsFrom(state)]
+            
+            # check in set if list_etiquette and it's set has the same number of elements
+            if len(list_etiquette) != len(set(list_etiquette)):
+                return False
+                
+        # if all states passes the test, return True
+        return True
         
 
        
@@ -72,7 +119,22 @@ class Automate(AutomateBase):
         """ Automate x str -> Automate
         rend l'automate complété d'auto, par rapport à alphabet
         """
-        return
+
+        # deep copy automata
+        copied_auto = copy.deepcopy(auto)
+
+        # create a null state then add to the copied automata
+        s_n = State(-1, False, False, "null")
+        copied_auto.addState(s_n)
+
+        # check each state if each alphabet exists in the etiquette list of the state. 
+        # if not, add a new transition to null state
+        for state in copied_auto.listStates:
+            list_etiquette = [t.etiquette for t in copied_auto.getListTransitionsFrom(state)]
+            for letter in alphabet:
+                if letter not in list_etiquette:
+                    copied_auto.addTransition(Transition(state, letter, s_n))
+        return copied_auto
 
        
 

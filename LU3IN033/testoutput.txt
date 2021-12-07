@@ -1,1 +1,776 @@
-0 16 164 134 45 11 0 80 127 5 125 64 8 0 69 0
+===============RESULTS================
+* 12 Frames in total
+
+----------------------------------
+
+Source MAC: FF.FF.FF.FF.FF.FF
+Destination MAC: 00.08.74.4F.36.23
+Type: Internet Protocol version 4 (IPv4)
+
+Version: IPV4
+IP Header Length: 5
+Type Of Service: 0
+Total Length: 328 octets
+Identifictaion: 45840
+Flags:
+	The first bit is reserved with a value of: 0
+	Don't Fragment: False
+	More Fragment: False
+Fragment Offset: 0 octets
+Protocol: UDP
+Checksum: 34453(0b1000011010010101)
+Source Address: 0.0.0.0
+Destination Address: 255.255.255.255
+No options avaliable
+
+Source Port: 68(DHCP)
+Destination Port: 67(DHCP)
+Length: 308
+Checksum: 59771(0b1110100101111011)
+
+Operation Code: 1(DNS Request Client)
+Hardware Address Type: 1(Ethernet)
+Length: 48 octets
+Hops: 0
+Client ID: 1046351075
+Start Time: 0
+Flags: 8000
+Client Address: 0.0.0.0
+Offered Address: 0.0.0.0
+Server Address: 0.0.0.0
+Relay Agent Address: 0.0.0.0
+Client Hardware Address: 00.08.74.4F.36.23(Ethernet)
+Server Host Name: None (Not Given)
+Boot File Name: None (Not Given)
+Options
+	53: DHCP Message
+		Option Length: 1 bytes
+		DHCP Message: DHCPDISCOVER (01)
+	116: Unknown Option
+		Option Length: 1 bytes
+		Option Value: 1 (01)
+	61: Unknown Option
+		Option Length: 7 bytes
+		Option Value: 281511287797283 (010008744F3623)
+	50: Unknown Option
+		Option Length: 4 bytes
+		Option Value: 3232235877 (C0A80165)
+	12: Unknown Option
+		Option Length: 4 bytes
+		Option Value: 1315924079 (4E6F686F)
+	60: Unknown Option
+		Option Length: 8 bytes
+		Option Value: 5571874491118988848 (4D53465420352E30)
+	55: Unknown Option
+		Option Length: 11 bytes
+		Option Value: 1279817101871138105063723 (010F03062C2E2F1F21F92B)
+	255: End of Options List (EOOL)
+
+----------------------------------
+
+Source MAC: FF.FF.FF.FF.FF.FF
+Destination MAC: 00.06.25.DA.AF.73
+Type: Internet Protocol version 4 (IPv4)
+
+Version: IPV4
+IP Header Length: 5
+Type Of Service: 0
+Total Length: 576 octets
+Identifictaion: 264
+Flags:
+	The first bit is reserved with a value of: 0
+	Don't Fragment: False
+	More Fragment: False
+Fragment Offset: 0 octets
+Protocol: UDP
+Checksum: 24572(0b101111111111100)
+Source Address: 192.168.1.1
+Destination Address: 255.255.255.255
+No options avaliable
+
+Source Port: 67(DHCP)
+Destination Port: 68(DHCP)
+Length: 556
+Checksum: 29219(0b111001000100011)
+
+Operation Code: 2(DHCP Reply Server)
+Hardware Address Type: 1(Ethernet)
+Length: 48 octets
+Hops: 0
+Client ID: 1046351075
+Start Time: 0
+Flags: 0000
+Client Address: 0.0.0.0
+Offered Address: 192.168.1.101
+Server Address: 0.0.0.0
+Relay Agent Address: 0.0.0.0
+Client Hardware Address: 00.08.74.4F.36.23(Ethernet)
+Server Host Name: None (Not Given)
+Boot File Name: None (Not Given)
+Options
+	53: DHCP Message
+		Option Length: 1 bytes
+		DHCP Message: DHCPOFFER (02)
+	1: Unknown Option
+		Option Length: 4 bytes
+		Option Value: 4294967040 (FFFFFF00)
+	3: Unknown Option
+		Option Length: 4 bytes
+		Option Value: 3232235777 (C0A80101)
+	6: Unknown Option
+		Option Length: 8 bytes
+		Option Value: 4607266066719032851 (3FF04C13CC7FC613)
+	15: Unknown Option
+		Option Length: 22 bytes
+		Option Value: 41303784256642474594212750179060495685876475610754304 (6E65322E636C69656E74322E61747462692E636F6D00)
+	51: Unknown Option
+		Option Length: 4 bytes
+		Option Value: 86400 (00015180)
+	54: Unknown Option
+		Option Length: 4 bytes
+		Option Value: 3232235777 (C0A80101)
+	255: End of Options List (EOOL)
+
+----------------------------------
+
+Source MAC: FF.FF.FF.FF.FF.FF
+Destination MAC: 00.08.74.4F.36.23
+Type: Internet Protocol version 4 (IPv4)
+
+Version: IPV4
+IP Header Length: 5
+Type Of Service: 0
+Total Length: 328 octets
+Identifictaion: 45841
+Flags:
+	The first bit is reserved with a value of: 0
+	Don't Fragment: False
+	More Fragment: False
+Fragment Offset: 0 octets
+Protocol: UDP
+Checksum: 34452(0b1000011010010100)
+Source Address: 0.0.0.0
+Destination Address: 255.255.255.255
+No options avaliable
+
+Source Port: 68(DHCP)
+Destination Port: 67(DHCP)
+Length: 308
+Checksum: 44677(0b1010111010000101)
+
+Operation Code: 1(DNS Request Client)
+Hardware Address Type: 1(Ethernet)
+Length: 48 octets
+Hops: 0
+Client ID: 1046351075
+Start Time: 0
+Flags: 0000
+Client Address: 0.0.0.0
+Offered Address: 0.0.0.0
+Server Address: 0.0.0.0
+Relay Agent Address: 0.0.0.0
+Client Hardware Address: 00.08.74.4F.36.23(Ethernet)
+Server Host Name: None (Not Given)
+Boot File Name: None (Not Given)
+Options
+	53: DHCP Message
+		Option Length: 1 bytes
+		DHCP Message: DHCPREQUEST (03)
+	61: Unknown Option
+		Option Length: 7 bytes
+		Option Value: 281511287797283 (010008744F3623)
+	50: Unknown Option
+		Option Length: 4 bytes
+		Option Value: 3232235877 (C0A80165)
+	54: Unknown Option
+		Option Length: 4 bytes
+		Option Value: 3232235777 (C0A80101)
+	12: Unknown Option
+		Option Length: 4 bytes
+		Option Value: 1315924079 (4E6F686F)
+	60: Unknown Option
+		Option Length: 8 bytes
+		Option Value: 5571874491118988848 (4D53465420352E30)
+	55: Unknown Option
+		Option Length: 11 bytes
+		Option Value: 1279817101871138105063723 (010F03062C2E2F1F21F92B)
+	255: End of Options List (EOOL)
+
+----------------------------------
+
+Source MAC: FF.FF.FF.FF.FF.FF
+Destination MAC: 00.06.25.DA.AF.73
+Type: Internet Protocol version 4 (IPv4)
+
+Version: IPV4
+IP Header Length: 5
+Type Of Service: 0
+Total Length: 576 octets
+Identifictaion: 265
+Flags:
+	The first bit is reserved with a value of: 0
+	Don't Fragment: False
+	More Fragment: False
+Fragment Offset: 0 octets
+Protocol: UDP
+Checksum: 24571(0b101111111111011)
+Source Address: 192.168.1.1
+Destination Address: 255.255.255.255
+No options avaliable
+
+Source Port: 67(DHCP)
+Destination Port: 68(DHCP)
+Length: 556
+Checksum: 28451(0b110111100100011)
+
+Operation Code: 2(DHCP Reply Server)
+Hardware Address Type: 1(Ethernet)
+Length: 48 octets
+Hops: 0
+Client ID: 1046351075
+Start Time: 0
+Flags: 0000
+Client Address: 0.0.0.0
+Offered Address: 192.168.1.101
+Server Address: 0.0.0.0
+Relay Agent Address: 0.0.0.0
+Client Hardware Address: 00.08.74.4F.36.23(Ethernet)
+Server Host Name: None (Not Given)
+Boot File Name: None (Not Given)
+Options
+	53: DHCP Message
+		Option Length: 1 bytes
+		DHCP Message: DHCPACK (05)
+	1: Unknown Option
+		Option Length: 4 bytes
+		Option Value: 4294967040 (FFFFFF00)
+	3: Unknown Option
+		Option Length: 4 bytes
+		Option Value: 3232235777 (C0A80101)
+	6: Unknown Option
+		Option Length: 8 bytes
+		Option Value: 4607266066719032851 (3FF04C13CC7FC613)
+	15: Unknown Option
+		Option Length: 22 bytes
+		Option Value: 41303784256642474594212750179060495685876475610754304 (6E65322E636C69656E74322E61747462692E636F6D00)
+	51: Unknown Option
+		Option Length: 4 bytes
+		Option Value: 86400 (00015180)
+	54: Unknown Option
+		Option Length: 4 bytes
+		Option Value: 3232235777 (C0A80101)
+	255: End of Options List (EOOL)
+
+----------------------------------
+
+Source MAC: 00.06.25.DA.AF.73
+Destination MAC: 00.08.74.4F.36.23
+Type: Internet Protocol version 4 (IPv4)
+
+Version: IPV4
+IP Header Length: 5
+Type Of Service: 0
+Total Length: 328 octets
+Identifictaion: 45866
+Flags:
+	The first bit is reserved with a value of: 0
+	Don't Fragment: False
+	More Fragment: False
+Fragment Offset: 0 octets
+Protocol: UDP
+Checksum: 708(0b1011000100)
+Source Address: 192.168.1.101
+Destination Address: 192.168.1.1
+No options avaliable
+
+Source Port: 68(DHCP)
+Destination Port: 67(DHCP)
+Length: 308
+Checksum: 9376(0b10010010100000)
+
+Operation Code: 1(DNS Request Client)
+Hardware Address Type: 1(Ethernet)
+Length: 48 octets
+Hops: 0
+Client ID: 629036451
+Start Time: 0
+Flags: 0000
+Client Address: 192.168.1.101
+Offered Address: 0.0.0.0
+Server Address: 0.0.0.0
+Relay Agent Address: 0.0.0.0
+Client Hardware Address: 00.08.74.4F.36.23(Ethernet)
+Server Host Name: None (Not Given)
+Boot File Name: None (Not Given)
+Options
+	53: DHCP Message
+		Option Length: 1 bytes
+		DHCP Message: DHCPREQUEST (03)
+	61: Unknown Option
+		Option Length: 7 bytes
+		Option Value: 281511287797283 (010008744F3623)
+	12: Unknown Option
+		Option Length: 4 bytes
+		Option Value: 1315924079 (4E6F686F)
+	60: Unknown Option
+		Option Length: 8 bytes
+		Option Value: 5571874491118988848 (4D53465420352E30)
+	55: Unknown Option
+		Option Length: 11 bytes
+		Option Value: 1279817101871138105063723 (010F03062C2E2F1F21F92B)
+	255: End of Options List (EOOL)
+
+----------------------------------
+
+Source MAC: FF.FF.FF.FF.FF.FF
+Destination MAC: 00.06.25.DA.AF.73
+Type: Internet Protocol version 4 (IPv4)
+
+Version: IPV4
+IP Header Length: 5
+Type Of Service: 0
+Total Length: 576 octets
+Identifictaion: 266
+Flags:
+	The first bit is reserved with a value of: 0
+	Don't Fragment: False
+	More Fragment: False
+Fragment Offset: 0 octets
+Protocol: UDP
+Checksum: 24570(0b101111111111010)
+Source Address: 192.168.1.1
+Destination Address: 255.255.255.255
+No options avaliable
+
+Source Port: 67(DHCP)
+Destination Port: 68(DHCP)
+Length: 556
+Checksum: 32053(0b111110100110101)
+
+Operation Code: 2(DHCP Reply Server)
+Hardware Address Type: 1(Ethernet)
+Length: 48 octets
+Hops: 0
+Client ID: 629036451
+Start Time: 0
+Flags: 0000
+Client Address: 192.168.1.101
+Offered Address: 192.168.1.101
+Server Address: 0.0.0.0
+Relay Agent Address: 0.0.0.0
+Client Hardware Address: 00.08.74.4F.36.23(Ethernet)
+Server Host Name: None (Not Given)
+Boot File Name: None (Not Given)
+Options
+	53: DHCP Message
+		Option Length: 1 bytes
+		DHCP Message: DHCPACK (05)
+	1: Unknown Option
+		Option Length: 4 bytes
+		Option Value: 4294967040 (FFFFFF00)
+	3: Unknown Option
+		Option Length: 4 bytes
+		Option Value: 3232235777 (C0A80101)
+	6: Unknown Option
+		Option Length: 8 bytes
+		Option Value: 4607266066719032851 (3FF04C13CC7FC613)
+	15: Unknown Option
+		Option Length: 22 bytes
+		Option Value: 41303784256642474594212750179060495685876475610754304 (6E65322E636C69656E74322E61747462692E636F6D00)
+	51: Unknown Option
+		Option Length: 4 bytes
+		Option Value: 86400 (00015180)
+	54: Unknown Option
+		Option Length: 4 bytes
+		Option Value: 3232235777 (C0A80101)
+	255: End of Options List (EOOL)
+
+----------------------------------
+
+Source MAC: 00.06.25.DA.AF.73
+Destination MAC: 00.08.74.4F.36.23
+Type: Internet Protocol version 4 (IPv4)
+
+Version: IPV4
+IP Header Length: 5
+Type Of Service: 0
+Total Length: 328 octets
+Identifictaion: 45870
+Flags:
+	The first bit is reserved with a value of: 0
+	Don't Fragment: False
+	More Fragment: False
+Fragment Offset: 0 octets
+Protocol: UDP
+Checksum: 704(0b1011000000)
+Source Address: 192.168.1.101
+Destination Address: 192.168.1.1
+No options avaliable
+
+Source Port: 68(DHCP)
+Destination Port: 67(DHCP)
+Length: 308
+Checksum: 21839(0b101010101001111)
+
+Operation Code: 1(DNS Request Client)
+Hardware Address Type: 1(Ethernet)
+Length: 48 octets
+Hops: 0
+Client ID: 3080922931
+Start Time: 0
+Flags: 8000
+Client Address: 192.168.1.101
+Offered Address: 0.0.0.0
+Server Address: 0.0.0.0
+Relay Agent Address: 0.0.0.0
+Client Hardware Address: 00.08.74.4F.36.23(Ethernet)
+Server Host Name: None (Not Given)
+Boot File Name: None (Not Given)
+Options
+	53: DHCP Message
+		Option Length: 1 bytes
+		DHCP Message: DHCPRELEASE (07)
+	54: Unknown Option
+		Option Length: 4 bytes
+		Option Value: 3232235777 (C0A80101)
+	61: Unknown Option
+		Option Length: 7 bytes
+		Option Value: 281511287797283 (010008744F3623)
+	255: End of Options List (EOOL)
+
+----------------------------------
+
+Source MAC: FF.FF.FF.FF.FF.FF
+Destination MAC: 00.08.74.4F.36.23
+Type: Internet Protocol version 4 (IPv4)
+
+Version: IPV4
+IP Header Length: 5
+Type Of Service: 0
+Total Length: 328 octets
+Identifictaion: 45871
+Flags:
+	The first bit is reserved with a value of: 0
+	Don't Fragment: False
+	More Fragment: False
+Fragment Offset: 0 octets
+Protocol: UDP
+Checksum: 34422(0b1000011001110110)
+Source Address: 0.0.0.0
+Destination Address: 255.255.255.255
+No options avaliable
+
+Source Port: 68(DHCP)
+Destination Port: 67(DHCP)
+Length: 308
+Checksum: 646(0b1010000110)
+
+Operation Code: 1(DNS Request Client)
+Hardware Address Type: 1(Ethernet)
+Length: 48 octets
+Hops: 0
+Client ID: 979236825
+Start Time: 0
+Flags: 0000
+Client Address: 0.0.0.0
+Offered Address: 0.0.0.0
+Server Address: 0.0.0.0
+Relay Agent Address: 0.0.0.0
+Client Hardware Address: 00.08.74.4F.36.23(Ethernet)
+Server Host Name: None (Not Given)
+Boot File Name: None (Not Given)
+Options
+	53: DHCP Message
+		Option Length: 1 bytes
+		DHCP Message: DHCPDISCOVER (01)
+	116: Unknown Option
+		Option Length: 1 bytes
+		Option Value: 1 (01)
+	61: Unknown Option
+		Option Length: 7 bytes
+		Option Value: 281511287797283 (010008744F3623)
+	50: Unknown Option
+		Option Length: 4 bytes
+		Option Value: 3232235877 (C0A80165)
+	12: Unknown Option
+		Option Length: 4 bytes
+		Option Value: 1315924079 (4E6F686F)
+	60: Unknown Option
+		Option Length: 8 bytes
+		Option Value: 5571874491118988848 (4D53465420352E30)
+	55: Unknown Option
+		Option Length: 11 bytes
+		Option Value: 1279817101871138105063723 (010F03062C2E2F1F21F92B)
+	255: End of Options List (EOOL)
+
+----------------------------------
+
+Source MAC: FF.FF.FF.FF.FF.FF
+Destination MAC: 00.06.25.DA.AF.73
+Type: Internet Protocol version 4 (IPv4)
+
+Version: IPV4
+IP Header Length: 5
+Type Of Service: 0
+Total Length: 576 octets
+Identifictaion: 267
+Flags:
+	The first bit is reserved with a value of: 0
+	Don't Fragment: False
+	More Fragment: False
+Fragment Offset: 0 octets
+Protocol: UDP
+Checksum: 24569(0b101111111111001)
+Source Address: 192.168.1.1
+Destination Address: 255.255.255.255
+No options avaliable
+
+Source Port: 67(DHCP)
+Destination Port: 68(DHCP)
+Length: 556
+Checksum: 35629(0b1000101100101101)
+
+Operation Code: 2(DHCP Reply Server)
+Hardware Address Type: 1(Ethernet)
+Length: 48 octets
+Hops: 0
+Client ID: 979236825
+Start Time: 0
+Flags: 0000
+Client Address: 0.0.0.0
+Offered Address: 192.168.1.101
+Server Address: 0.0.0.0
+Relay Agent Address: 0.0.0.0
+Client Hardware Address: 00.08.74.4F.36.23(Ethernet)
+Server Host Name: None (Not Given)
+Boot File Name: None (Not Given)
+Options
+	53: DHCP Message
+		Option Length: 1 bytes
+		DHCP Message: DHCPOFFER (02)
+	1: Unknown Option
+		Option Length: 4 bytes
+		Option Value: 4294967040 (FFFFFF00)
+	3: Unknown Option
+		Option Length: 4 bytes
+		Option Value: 3232235777 (C0A80101)
+	6: Unknown Option
+		Option Length: 8 bytes
+		Option Value: 4607266066719032851 (3FF04C13CC7FC613)
+	15: Unknown Option
+		Option Length: 22 bytes
+		Option Value: 41303784256642474594212750179060495685876475610754304 (6E65322E636C69656E74322E61747462692E636F6D00)
+	51: Unknown Option
+		Option Length: 4 bytes
+		Option Value: 86400 (00015180)
+	54: Unknown Option
+		Option Length: 4 bytes
+		Option Value: 3232235777 (C0A80101)
+	255: End of Options List (EOOL)
+
+----------------------------------
+
+Source MAC: FF.FF.FF.FF.FF.FF
+Destination MAC: 00.08.74.4F.36.23
+Type: Internet Protocol version 4 (IPv4)
+
+Version: IPV4
+IP Header Length: 5
+Type Of Service: 0
+Total Length: 328 octets
+Identifictaion: 45872
+Flags:
+	The first bit is reserved with a value of: 0
+	Don't Fragment: False
+	More Fragment: False
+Fragment Offset: 0 octets
+Protocol: UDP
+Checksum: 34421(0b1000011001110101)
+Source Address: 0.0.0.0
+Destination Address: 255.255.255.255
+No options avaliable
+
+Source Port: 68(DHCP)
+Destination Port: 67(DHCP)
+Length: 308
+Checksum: 51087(0b1100011110001111)
+
+Operation Code: 1(DNS Request Client)
+Hardware Address Type: 1(Ethernet)
+Length: 48 octets
+Hops: 0
+Client ID: 979236825
+Start Time: 0
+Flags: 0000
+Client Address: 0.0.0.0
+Offered Address: 0.0.0.0
+Server Address: 0.0.0.0
+Relay Agent Address: 0.0.0.0
+Client Hardware Address: 00.08.74.4F.36.23(Ethernet)
+Server Host Name: None (Not Given)
+Boot File Name: None (Not Given)
+Options
+	53: DHCP Message
+		Option Length: 1 bytes
+		DHCP Message: DHCPREQUEST (03)
+	61: Unknown Option
+		Option Length: 7 bytes
+		Option Value: 281511287797283 (010008744F3623)
+	50: Unknown Option
+		Option Length: 4 bytes
+		Option Value: 3232235877 (C0A80165)
+	54: Unknown Option
+		Option Length: 4 bytes
+		Option Value: 3232235777 (C0A80101)
+	12: Unknown Option
+		Option Length: 4 bytes
+		Option Value: 1315924079 (4E6F686F)
+	60: Unknown Option
+		Option Length: 8 bytes
+		Option Value: 5571874491118988848 (4D53465420352E30)
+	55: Unknown Option
+		Option Length: 11 bytes
+		Option Value: 1279817101871138105063723 (010F03062C2E2F1F21F92B)
+	255: End of Options List (EOOL)
+
+----------------------------------
+
+Source MAC: FF.FF.FF.FF.FF.FF
+Destination MAC: 00.06.25.DA.AF.73
+Type: Internet Protocol version 4 (IPv4)
+
+Version: IPV4
+IP Header Length: 5
+Type Of Service: 0
+Total Length: 576 octets
+Identifictaion: 268
+Flags:
+	The first bit is reserved with a value of: 0
+	Don't Fragment: False
+	More Fragment: False
+Fragment Offset: 0 octets
+Protocol: UDP
+Checksum: 24568(0b101111111111000)
+Source Address: 192.168.1.1
+Destination Address: 255.255.255.255
+No options avaliable
+
+Source Port: 67(DHCP)
+Destination Port: 68(DHCP)
+Length: 556
+Checksum: 34861(0b1000100000101101)
+
+Operation Code: 2(DHCP Reply Server)
+Hardware Address Type: 1(Ethernet)
+Length: 48 octets
+Hops: 0
+Client ID: 979236825
+Start Time: 0
+Flags: 0000
+Client Address: 0.0.0.0
+Offered Address: 192.168.1.101
+Server Address: 0.0.0.0
+Relay Agent Address: 0.0.0.0
+Client Hardware Address: 00.08.74.4F.36.23(Ethernet)
+Server Host Name: None (Not Given)
+Boot File Name: None (Not Given)
+Options
+	53: DHCP Message
+		Option Length: 1 bytes
+		DHCP Message: DHCPACK (05)
+	1: Unknown Option
+		Option Length: 4 bytes
+		Option Value: 4294967040 (FFFFFF00)
+	3: Unknown Option
+		Option Length: 4 bytes
+		Option Value: 3232235777 (C0A80101)
+	6: Unknown Option
+		Option Length: 8 bytes
+		Option Value: 4607266066719032851 (3FF04C13CC7FC613)
+	15: Unknown Option
+		Option Length: 22 bytes
+		Option Value: 41303784256642474594212750179060495685876475610754304 (6E65322E636C69656E74322E61747462692E636F6D00)
+	51: Unknown Option
+		Option Length: 4 bytes
+		Option Value: 86400 (00015180)
+	54: Unknown Option
+		Option Length: 4 bytes
+		Option Value: 3232235777 (C0A80101)
+	255: End of Options List (EOOL)
+
+----------------------------------
+
+Source MAC: 8C.C8.4B.E9.F4.17
+Destination MAC: 4E.72.68.9A.0E.3F
+Type: Internet Protocol version 4 (IPv4)
+
+Version: IPV4
+IP Header Length: 5
+Type Of Service: 0
+Total Length: 344 octets
+Identifictaion: 47985
+Flags:
+	The first bit is reserved with a value of: 0
+	Don't Fragment: True
+	More Fragment: False
+Fragment Offset: 0 octets
+Protocol: UDP
+Checksum: 17300(0b100001110010100)
+Source Address: 192.168.92.171
+Destination Address: 192.168.92.147
+No options avaliable
+
+Source Port: 67(DHCP)
+Destination Port: 68(DHCP)
+Length: 324
+Checksum: 50830(0b1100011010001110)
+
+Operation Code: 2(DHCP Reply Server)
+Hardware Address Type: 1(Ethernet)
+Length: 48 octets
+Hops: 0
+Client ID: 1748567339
+Start Time: 0
+Flags: 0000
+Client Address: 0.0.0.0
+Offered Address: 192.168.92.147
+Server Address: 192.168.92.171
+Relay Agent Address: 0.0.0.0
+Client Hardware Address: 8C.C8.4B.E9.F4.17(Ethernet)
+Server Host Name: None (Not Given)
+Boot File Name: None (Not Given)
+Options
+	53: DHCP Message
+		Option Length: 1 bytes
+		DHCP Message: DHCPOFFER (02)
+	54: Unknown Option
+		Option Length: 4 bytes
+		Option Value: 3232259243 (C0A85CAB)
+	51: Unknown Option
+		Option Length: 4 bytes
+		Option Value: 3600 (00000E10)
+	58: Unknown Option
+		Option Length: 4 bytes
+		Option Value: 1800 (00000708)
+	59: Unknown Option
+		Option Length: 4 bytes
+		Option Value: 3150 (00000C4E)
+	1: Unknown Option
+		Option Length: 4 bytes
+		Option Value: 4294967040 (FFFFFF00)
+	28: Unknown Option
+		Option Length: 4 bytes
+		Option Value: 3232259327 (C0A85CFF)
+	3: Unknown Option
+		Option Length: 4 bytes
+		Option Value: 3232259243 (C0A85CAB)
+	6: Unknown Option
+		Option Length: 4 bytes
+		Option Value: 3232259243 (C0A85CAB)
+	12: Unknown Option
+		Option Length: 5 bytes
+		Option Value: 427121667962 (63726F6F7A)
+	43: Unknown Option
+		Option Length: 15 bytes
+		Option Value: 339086736742521535221425579624645956 (414E44524F49445F4D455445524544)
+	255: End of Options List (EOOL)
