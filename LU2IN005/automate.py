@@ -97,10 +97,13 @@ class Automate(AutomateBase):
         """ Automate  -> bool
         rend True si auto est déterministe, False sinon
         """
-        # for every state, check if there is an overlap of alphabets
         
-        listStates = auto.listStates
-        for state in listStates:
+        # if there are more than two initial states, return False
+        if len(auto.getListInitialStates()) != 1:
+            return False
+
+        # for every state, check if there is an overlap of alphabets
+        for state in auto.listStates:
 
             # etiquette list of a state
             list_etiquette = [t.etiquette for t in auto.getListTransitionsFrom(state)]
