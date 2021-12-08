@@ -140,7 +140,6 @@ class Automate(AutomateBase):
         return copied_auto
 
        
-
     @staticmethod
     def determinisation(auto) :
         """ Automate  -> Automate
@@ -163,17 +162,22 @@ class Automate(AutomateBase):
 
             # loop from each added state from state_index
             for state_in in state_index:
+                idx_current = state_index.index(state_in)
+                # print(state_in)
                 for alphabet in alphabet_list:
                     state_out = auto.succ(state_in,alphabet)
+                    # print(" ", state_in, alphabet, state_out)
                     if len(state_out) != 0:
                         if state_out in state_index:
                             idx = state_index.index(state_out)
-                            trans_list.append(Transition(state_list[state_cnt], alphabet, state_list[idx]))
+                            new_trans = Transition(state_list[idx_current], alphabet, state_list[idx])
+                            # print("  ", new_trans)
+                            trans_list.append(new_trans)
                         else:
-                            print(state_list)
                             state_index.append(state_out)
                             state_cnt += 1
                             state_list.append(State(state_cnt,False,State.isFinalIn(state_out),state_index[state_cnt]))
+                            # print(f"    new state, {state_cnt}")
                             trans_list.append(Transition(state_list[state_cnt-1],alphabet,state_list[state_cnt]))
             
             return Automate(trans_list)
