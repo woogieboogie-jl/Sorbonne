@@ -183,19 +183,6 @@ class Automate(AutomateBase):
             return Automate(trans_list)
 
 
-
-
-
-                
-
-
-            cnt += 1
-
-# initial states -> set
-# 
-
-            
-        return
         
     @staticmethod
     def complementaire(auto,alphabet):
