@@ -1,0 +1,148 @@
+===============RESULTS================
+* 3 Frames in total
+
+----------------------------------
+
+
+* 1 of 3 *
+
+
+
+
+
+Ethernet Protocol:------------------------------------------
+
+	Source MAC: 08.00.27.E2.9F.A6
+	Destination MAC: 08.00.27.FC.6A.C9
+	Type: Internet Protocol version 4 (IPv4)
+
+
+
+
+IP Protocol:------------------------------------------------
+
+	Version: IPV4
+	IP Header Length: 5
+	Type Of Service: 0
+	Total Length: 996 octets
+	Identifictaion: 46544
+	Flags:
+	The first bit is reserved with a value of: 0
+	Don't Fragment: False
+	More Fragment: True
+	Fragment Offset: 0 octets
+	Protocol: ICMP
+	Checksum: 39748 (0b1001101101000100)
+	Source Address: 2.1.1.2
+	Destination Address: 2.1.1.1
+	No options avaliable
+
+
+
+
+(Transport Layer) UNKNOWN PROTOCOL, NOT SUPPORTED:------------------------------------------
+
+
+
+
+(Application Layer) UNKNOWN PROTOCOL, NOT SUPPORTED:------------------------------------------
+
+----------------------------------
+
+
+* 2 of 3 *
+
+
+
+
+
+Ethernet Protocol:------------------------------------------
+
+	Source MAC: 52.54.00.53.41.A7
+	Destination MAC: 00.1B.21.9A.47.79
+	Type: Internet Protocol version 4 (IPv4)
+
+
+
+
+IP Protocol:------------------------------------------------
+
+	Version: IPV4
+	IP Header Length: 5
+	Type Of Service: 0
+	Total Length: 42 octets
+	Identifictaion: 56921
+	Flags:
+	The first bit is reserved with a value of: 0
+	Don't Fragment: True
+	More Fragment: False
+	Fragment Offset: 0 octets
+	Protocol: UDP
+	Checksum: 49795 (0b1100001010000011)
+	Source Address: 176.126.243.198
+	Destination Address: 185.47.63.113
+	No options avaliable
+
+
+
+
+UDP:-----------------------------------------------------
+
+	Source Port: 36635 (Client)
+	Destination Port: 19 (Client)
+	Length: 22
+	Checksum: 62832 (0b1111010101110000)
+
+
+
+
+(Application Layer) UNKNOWN PROTOCOL, NOT SUPPORTED:------------------------------------------
+
+----------------------------------
+
+
+* 3 of 3 *
+
+
+
+
+
+Ethernet Protocol:------------------------------------------
+
+	Source MAC: 00.00.00.00.00.00
+	Destination MAC: 00.00.00.00.00.00
+	Type: Internet Protocol version 4 (IPv4)
+
+
+
+
+IP Protocol:------------------------------------------------
+
+	Version: IPV4
+	IP Header Length: 15
+	Type Of Service: 0
+	Total Length: 124 octets
+	Identifictaion: 0
+	Flags:
+	The first bit is reserved with a value of: 0
+	Don't Fragment: True
+	More Fragment: False
+	Fragment Offset: 0 octets
+	Protocol: ICMP
+	Checksum: 64816 (0b1111110100110000)
+	Source Address: 127.0.0.1
+	Destination Address: 127.0.0.1
+	Options
+		134: Unknown Option
+			The length of option is: 40 octets.
+			The value of option is: 0x101220001ae0000000000000000000000000000000000000000000000000000000001 (0000000101220001AE0000000000000000000000000000000000000000000000000000000001)
+
+
+
+
+(Transport Layer) UNKNOWN PROTOCOL, NOT SUPPORTED:------------------------------------------
+
+
+
+
+(Application Layer) UNKNOWN PROTOCOL, NOT SUPPORTED:------------------------------------------

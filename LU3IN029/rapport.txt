@@ -1,0 +1,97 @@
+Q1.1
+
+.data
+	recette_depense:	.word	200, 150, 20, 30, 1100, 1000, 100
+	chaine_rd:		.asciiz	"RDDDRDD"
+	ch_ok:			.asciiz "bilan juste\n"
+	ch_nok:			.asciiz "passage a decouvert ou mauvais calcul\n"
+	
+
+.text
+	addiu	$29, $29, -12
+	ori	$8, $0, 0			# var ok
+	lui	$3, 0x1001			
+	addiu	$11, $3, 36			# @ch_ok
+	addiu	$12, $3, 12			# @ch_nok
+	
+	
+	ori	$4, $3, 0		
+	ori	$5, $4, 28
+	jal	bon_budget
+	ori	$8, $2, 0
+	
+	beq	$8, $0, else
+	j	if
+		
+		if:
+		addiu	$11, $3, 36
+		ori	$4, $11, 0
+		ori	$2, $0, 4
+		syscall
+		finif 
+		
+		else:
+		addiu	$12, $3, 12
+		ori	$4, $12, 0
+		ori	$2, $0, 4
+		syscall
+		finfif
+	
+	fin_if:
+	addiu	$29, $29, 12
+	ori	$2, $0, 10
+	syscall
+	
+	
+bon_budget:
+	addiu	$29, $29, -12
+	sw	$31, 8($29)
+	sw	$0, 0($29)			# i = 0
+	sw	$0, 4($29)			# d = 0 
+	lw	$10, 4($29)			# call i
+	lw	$11, 0($29)			# call d
+	
+	
+	
+	loop:
+	addu	$8, $5, $10			# @s[i]
+	lb	$8, 0($8)			# s[i]
+	beq	$8, $0, finloop
+		
+		if:
+		ori	$9, $0, 52
+		bne 	$8, $9, else
+		sll	$9, $10, 2
+		addu	$9, $4, $9		# @t[i]
+		lw	$9, 0($9)		# t[i]
+		addu	$11, $11, $9		# d += t[i]
+		j	nextif
+		
+		else:
+		addu	$9, $4, $9		# @t[i]
+		lw	$9, 0($9)		# t[i]
+		subu	$11, $11, $9		# d -= t[i]
+		j	nextif
+		
+		
+		nextif:	
+		bltz	$11 finloop 
+		
+	
+	addiu	$10, $10, 1
+	j	loop
+	
+	
+	finloop:
+	ori	$2, $11, 0
+	lw	$31, 8($29)
+	addiu	$29, $29, 12
+	jr	$31
+	
+	
+	
+	
+Q1.2	
+	
+
+	

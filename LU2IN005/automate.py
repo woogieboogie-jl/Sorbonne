@@ -151,63 +151,108 @@ class Automate(AutomateBase):
         else:
             # initial state into state_index
             state_index = []
-            state_index.append(auto.getListInitialStates())
-            
+            state_index.append(set(auto.getListInitialStates()))
+
             # initial State / Transition declaration
             state_cnt = 0
             state_list = []
             trans_list = []
             alphabet_list = auto.getAlphabetFromTransitions()
-            state_list.append(State(state_cnt,True,False,state_index[state_cnt]))
+            state_list.append(State(state_cnt,True,State.isFinalIn(state_index[0]),state_index[0]))
 
             # loop from each added state from state_index
-            for state_in in state_index:
-                idx_current = state_index.index(state_in)
-                # print(state_in)
+            for idx, state_in in enumerate(state_index):
                 for alphabet in alphabet_list:
-                    state_out = auto.succ(state_in,alphabet)
-                    # print(" ", state_in, alphabet, state_out)
+                    state_out = set(auto.succ(state_in,alphabet))
                     if len(state_out) != 0:
                         if state_out in state_index:
-                            idx = state_index.index(state_out)
-                            new_trans = Transition(state_list[idx_current], alphabet, state_list[idx])
-                            # print("  ", new_trans)
+                            idx_state = state_index.index(state_out)
+                            new_trans = Transition(state_list[idx], alphabet, state_list[idx_state])
                             trans_list.append(new_trans)
                         else:
                             state_index.append(state_out)
                             state_cnt += 1
                             state_list.append(State(state_cnt,False,State.isFinalIn(state_out),state_index[state_cnt]))
-                            # print(f"    new state, {state_cnt}")
-                            trans_list.append(Transition(state_list[state_cnt-1],alphabet,state_list[state_cnt]))
-            
+                            trans_list.append(Transition(state_list[idx],alphabet,state_list[state_cnt]))
+
             return Automate(trans_list)
-
-
+                       
+        
         
     @staticmethod
-    def complementaire(auto,alphabet):
+    def complementaire(auto):
         """ Automate -> Automate
         rend  l'automate acceptant pour langage le complémentaire du langage de a
         """
-              
+        alphabet = auto.getAlphabetFromTransitions()
+        new_auto = copy.deepcopy(auto)
+        new_auto_c = Automate.completeAutomate(new_auto ,alphabet)
+        new_auto_cd= Automate.determinisation(new_auto_c)
+        
+        for s in new_auto_cd.listStates:
+                s.fin = False if s.fin is True else True
+        return new_auto_cd                
    
+
     @staticmethod
     def intersection (auto0, auto1):
         """ Automate x Automate -> Automate
         rend l'automate acceptant pour langage l'intersection des langages des deux automates
         """
-        return
+        state_cnt = 0
+        state_init = (set(auto0.getListInitialStates()), set(auto1.getListInitialStates()))
+        state_index = [state_init]
+        
+        state_list = [State(0, True, State.isFinalIn(state_init[0]) and State.isFinalIn(state_init[1], state_index[0]))]
+        alphabet_list = set.intersection(set(list(auto0.getAlphabetFromTransitions())), set(list(auto1.getAlphabetFromTransitions())))
+        trans_list = []
+
+        for idx, state in enumerate(state_index):
+                for alphabet in alphabet_list:
+                        state_out = (set(auto0.succ(state[0],alphabet)) , set(auto1.succ(state[1],alphabet)))
+                        if state_out in state_index:
+                                idx_state = state_index.index(state_out)
+                                new_trans = Transition(state_list[idx], alphabet, state_list[idx_state])
+                                trans_list.append(new_trans)
+                        else:
+                                state_index.append(state_out)
+                                state_cnt += 1
+                                state_list.append(State(state_out,False,State.isFinalIn(state_out[0]) and State.isFinalIn(state_out[1]),state_index[state_cnt]))
+                                new_trans = Transition(state_list[idx], alphabet, state_list[state_cnt])
+                                trans_list.append(new_trans)
+
+        return Automate(trans_list)
+                
 
     @staticmethod
     def union (auto0, auto1):
         """ Automate x Automate -> Automate
         rend l'automate acceptant pour langage l'union des langages des deux automates
         """
-        return
+        state_cnt = 0
+        state_init = (set(auto0.getListInitialStates()), set(auto1.getListInitialStates()))
+        state_index = [state_init]
         
+        state_list = [State(0, True, State.isFinalIn(state_init[0]) or State.isFinalIn(state_init[1], state_index[0]))]
+        alphabet_list = set.union(set(list(auto0.getAlphabetFromTransitions())), set(list(auto1.getAlphabetFromTransitions())))
+        trans_list = []
 
-   
-       
+        for idx, state in enumerate(state_index):
+                for alphabet in alphabet_list:
+                        state_out = (set(auto0.succ(state[0],alphabet)) , set(auto1.succ(state[1],alphabet)))
+                        if state_out in state_index:
+                                idx_state = state_index.index(state_out)
+                                new_trans = Transition(state_list[idx], alphabet, state_list[idx_state])
+                                trans_list.append(new_trans)
+                        else:
+                                state_index.append(state_out)
+                                state_cnt += 1
+                                state_list.append(State(state_out,False,State.isFinalIn(state_out[0]) or State.isFinalIn(state_out[1]),state_index[state_cnt]))
+                                new_trans = Transition(state_list[idx], alphabet, state_list[state_cnt])
+                                trans_list.append(new_trans)
+                                
+        return Automate(trans_list)
+        
 
     @staticmethod
     def concatenation (auto1, auto2):
@@ -222,7 +267,19 @@ class Automate(AutomateBase):
         """ Automate  -> Automate
         rend l'automate acceptant pour langage l'étoile du langage de a
         """
-        return
+        newAuto = copy.deepcopy(auto)
+        
+        currentList = []
+        initialStates = auto.getListInitialStates()
+        for l in auto.getAlphabetFromTransitions():
+                for e in auto.listStates:
+                        currentList = auto.succ(auto.listStates,l)
+                        for s in currentList:
+                                if e.fin == True:
+                                        for si in initialStates:
+                                                newAuto.addState(State(e,l,si))
+        return newAuto  
+                                                         
 
 
 
